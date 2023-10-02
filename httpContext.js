@@ -31,7 +31,7 @@ export default class HttpContext {
         return await new Promise(resolve => {
             let body = [];
             this.req.on('data', chunk => {
-                body += chunk; // body.push(chunk) was a mistake and do not work with big data
+                body += chunk; // body.push(chunk) was a mistake and does not work with big data
             }).on('end', () => {
                 if (body.length > 0) {
                     if (this.req.headers['content-type'] == "application/json") {
